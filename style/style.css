@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* utlizamos variables para no repetir tanto codigo */
+:root{
+    --color-primario:black;
+    --color-secundario:#f6f6f6;
+    --color-terciario:#22d4fd;
+    --color-hover:#272727;
+
+    --fuente-Montserrat:'Montserrat',sans-serif;
+    --fuente-Krona:"Krona One", sans-serif;
+}
+
+/* Selector universal */
+*{
+    /* le quita el espacio interno del contenedor que tiene la pagina */
+    padding: 0;
+    /* le quita el espacio externo del contenedor que tiene la pagina */
+    margin: 0;
+}
+
+body{
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    /* coloca la anchura del cuerpo igual para cualquier tipo de pantalla osea lo hace responsive */
+    /* coloca toda la seccion en una caja */
+    box-sizing: border-box;
+}
+/* clase titulo */
+.title{
+    color: var(--color-terciario);
+}
+
+.header{
+    padding: 2% 0 0 15%;
+}
+
+.header__menu{
+    display: flex;
+    gap: 80px;
+}
+
+.header__menu__link{
+    font-family: var(--fuente-Montserrat);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-terciario);
+    text-decoration: none;
+}
+
+/* clase presentacion */
+.presentacion{
+    padding: 6% 15%; /* agrega un margen para centrar los cuadrados en la pantalla */
+    /* crea un contenedor flexible para poder mover el contenido de manera libre */
+    display: flex;
+    /* alinea el contenido en el centro */
+    align-items: center;
+    /* le da espacio a los elementos del contenedor de manera vertical*/
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.presentacion__contenido{
+    width: 50%;
+    display: flex;
+    /* ubica los elementos del contendor en forma de columna */
+    flex-direction: column;
+    /* agrega un espacio horizontal entre elementos que estan dentro del display:flex */
+    gap: 40px;
+}
+
+.presentacio__contenido__titulo{
+    font-size: 36px;
+    font-family: var(--fuente-Krona);
+}
+
+.presentacio__contenido__parrafo{
+    font-size: 24px;
+    font-family: var(--fuente-Montserrat);
+}
+
+.presentacion__enlaces{
+    display: flex; /* coloca los cuadrados uno al lado del otro */
+    justify-content: space-between;
+    /* alinea los botones verticalmente */
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;  /* agrega espacios iguales entre cada cuadrado */
+}
+
+.presentacion__enlaces__subtitulo{
+    font-family: var(--fuente-Krona);
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.presentacion__enlaces__link{
+    width: 50%;
+    text-align: center;
+    padding: 21.5px 0;
+    border-radius: 8px;
+    font-family: var(--fuente-Montserrat);
+    font-size: 24px;
+    font-weight: 600;
+    /* sirve para decorar o quitar la decoracion que tenga por defecto la etiqueta a */
+    text-decoration: none;
+    color: var(--color-secundario);
+    border: 2px solid var(--color-terciario);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.presentacion__enlaces__link:hover{
+    background-color: var(--color-hover);
+}
+
+.presentacion__imagen{
+    width: 50%;
+}
+
+footer{
+    background-color: var(--color-terciario);
+    padding: 24px;
+    color:var(--color-primario);
+    text-align: center;
+    font-family: var(--fuente-Montserrat);
+    font-size: 24px;
+    font-weight: 400;
+}
+
+/* esto es una media queries la cual se utliza para volver el proyecto responsivo */
+
+@media(max-width:1200px){/*en esta linea definimos cuando se adaptara la paginadependiendo de la anchura maxima de la pagina*/
+    
+    .header{
+        padding: 10%;
+    }
+
+    .header__menu{
+        justify-content: center;
+    }
+
+    .presentacion{
+        flex-direction: column-reverse; /*este comando su usa para organizar el contenido de manera vertical y poner la imagen de primeras*/
+    }
+
+    .presentacion__contenido{
+        width: auto;
+    }
+}
